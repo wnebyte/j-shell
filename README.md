@@ -1,6 +1,8 @@
 # j-cli
 
-java-library
+java-library   
+
+<strong>README is out of date</strong>
 
 ## Table of Contents
 
