@@ -27,6 +27,15 @@ public class CLI {
     ###########################
     */
 
+    public static void launch() {
+        launch(null);
+    }
+
+    public static void launch(Configuration conf) {
+        CLI cli = new CLI(conf);
+        cli.run();
+    }
+
     static ContextView contextViewOf(AbstractCommand cmd) {
         if (cmd.hasPrefix()) {
             return ContextView.of(
@@ -73,14 +82,14 @@ public class CLI {
     */
 
     /**
-     * Constructs a new instance with a default {@link Configuration}.
+     * Constructs a new instance using a default {@link Configuration}.
      */
     public CLI() {
         this(null);
     }
 
     /**
-     * Constructs a new instance with the specified <code>Configuration</code>.
+     * Constructs a new instance using the specified <code>Configuration</code>.
      * @param conf to be used.
      */
     public CLI(Configuration conf) {

@@ -7,10 +7,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotate your Java Method with this annotation and it can be initialized and invoked via an
+ * Annotate any Java Method with this annotation, and it can be initialized and invoked via an
  * instance of {@link CLI} at runtime.<br>
  * A Command consists of an optional prefix, one or more distinct names, a description, and an enumeration of
- * Arguments that can be initialized at runtime.<br>
+ * Arguments.<br>
  * Here are some examples of usage:<br><br>
  * <pre>
  *{@literal @}Command
@@ -40,9 +40,9 @@ import java.lang.annotation.Target;
 public @interface Command {
 
     /**
-     * <p>Specify a name for this Command.</p>
-     * Defaults to the name of the Java Method.
-     * @return the name of the <code>Command</code>.
+     * <p>Specify a name for this Command.<br>
+     * By default the name of the Command will be the same as the name of the Java Method.</p>
+     * @return the name of this Command.
      */
     String value() default "";
 

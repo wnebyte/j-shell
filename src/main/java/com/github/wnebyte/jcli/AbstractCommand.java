@@ -7,7 +7,7 @@ import com.github.wnebyte.jarguments.Argument;
 import com.github.wnebyte.jarguments.util.Strings;
 
 /**
- * This class represents an abstract Command that can be executed.
+ * This class represents an abstract executable Command.
  */
 public abstract class AbstractCommand implements Comparable<AbstractCommand> {
 

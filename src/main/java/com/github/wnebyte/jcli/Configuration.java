@@ -192,7 +192,7 @@ public class Configuration extends BaseConfiguration {
     }
 
     /**
-     * Specifies that the <code>CLI</code> should scan the specified <code>Object[]</code> for
+     * Specifies that the <code>CLI</code> should scan the specified <code>objects</code> for
      * {@link com.github.wnebyte.jcli.annotation.Command} annotated Java Methods.
      * @param objects to be scanned.
      * @return this (for chaining).
@@ -206,7 +206,7 @@ public class Configuration extends BaseConfiguration {
     }
 
     /**
-     * Specifies that the <code>CLI</code> should scan the specified <code>Method[]</code> for
+     * Specifies that the <code>CLI</code> should scan the specified <code>methods</code> for
      * {@link com.github.wnebyte.jcli.annotation.Command} annotated Java Methods.
      * @param methods to be scanned.
      * @return this (for chaining).
@@ -220,7 +220,7 @@ public class Configuration extends BaseConfiguration {
     }
 
     /**
-     * Specifies that the <code>CLI</code> should scan the specified <code>Class[]</code> for
+     * Specifies that the <code>CLI</code> should scan the specified <code>classes</code> for
      * {@link com.github.wnebyte.jcli.annotation.Command} annotated Java Methods.
      * @param classes to be scanned.
      * @return this (for chaining).
@@ -234,7 +234,7 @@ public class Configuration extends BaseConfiguration {
     }
 
     /**
-     * Specifies that the <code>CLI</code> should scan the specified <code>CommandIdentifier[]</code> for
+     * Specifies that the <code>CLI</code> should scan the specified <code>identifiers</code> for
      * {@link com.github.wnebyte.jcli.annotation.Command} annotated Java Methods.
      * @param commandIdentifiers to be scanned.
      * @return this (for chaining).
@@ -248,7 +248,7 @@ public class Configuration extends BaseConfiguration {
     }
 
     /**
-     * Specifies that the <code>CLI</code> should scan the specified <code>String[]</code> for
+     * Specifies that the <code>CLI</code> should scan the specified <code>packages</code> for
      * {@link com.github.wnebyte.jcli.annotation.Command} annotated Java Methods.
      * @param packages to be scanned.
      * @return this (for chaining).
@@ -262,7 +262,7 @@ public class Configuration extends BaseConfiguration {
     }
 
     /**
-     * Specifies that the <code>CLI</code> should exclude the classes contained in the specified <code>Class[]</code>
+     * Specifies that the <code>CLI</code> should exclude the specified <code>classes</code>
      * from being scanned for {@link com.github.wnebyte.jcli.annotation.Command} annotated Java Methods.
      * @param classes to be excluded from scanning.
      * @return this (for chaining).
@@ -275,21 +275,17 @@ public class Configuration extends BaseConfiguration {
     }
 
     /**
-     * Specifies that the <code>CLI</code> should not build its built-in Help Command.
+     * Specifies that the <code>CLI</code> should <b>not</b> build its default help <code>Command</code>.
      * @return this (for chaining).
      */
-    public Configuration mapHelpCommand() {
-        this.mapHelpCommand = true;
-        return this;
-    }
-
     public Configuration disableMapHelpCommand() {
         this.mapHelpCommand = false;
         return this;
     }
 
     /**
-     * Specifies that the <code>CLI</code> should not scan any packages for any {@link Command} annotated Java Methods.
+     * Specifies that the <code>CLI</code> should <b>not</b> scan any packages for {@link Command} annotated Java Methods.
+     * <b>Note</b> by default all packages are scanned.
      * @return this (for chaining).
      */
     public Configuration disableScanPackages() {
@@ -308,63 +304,71 @@ public class Configuration extends BaseConfiguration {
     }
 
     /**
-     * @return the <code>IDependencyContainer</code> associated with this instance.
+     * @return the <code>IDependencyContainer</code> associated with this Configuration.
      */
     public IDependencyContainer getDependencyContainer() {
         return dependencyContainer;
     }
 
     /**
-     * @return the <code>AbstractTypeConverterMap</code> associated with this instance.
+     * @return the <code>AbstractTypeConverterMap</code> associated with this Configuration.
      */
     public AbstractTypeAdapterRegistry getTypeAdapterRegistry() {
         return adapters;
     }
 
     /**
-     * @return the <code>Set</code> of classes to be scanned for annotated Java Methods associated with this instance.
+     * @return the <code>Set</code> of classes to be scanned for annotated Java Methods
+     * associated with this Configuration.
      */
     public Set<Class<?>> getScanClasses() {
         return classes;
     }
 
     /**
-     * @return the <code>Set</code> of objects to be scanned for annotated Java Methods associated with this instance.
+     * @return the <code>Set</code> of objects to be scanned for annotated Java Methods
+     * associated with this Configuration.
      */
     public Set<Object> getScanObjects() {
         return objects;
     }
 
     /**
-     * @return the <code>Set</code> of methods to be scanned for annotated Java Methods associated with this instance.
+     * @return the <code>Set</code> of methods to be scanned for annotated Java Methods
+     * associated with this Configuration.
      */
     public Set<Method> getScanMethods() {
         return methods;
     }
 
     /**
-     * @return the <code>Set</code> of packages to be scanned for annotated Java Methods associated with this instance.
+     * @return the <code>Set</code> of packages to be scanned for annotated Java Methods
+     * associated with this Configuration.
      */
     public Set<String> getScanPackages() {
         return packages;
     }
 
     /**
-     * @return the <code>Set</code> of commandIdentifiers to be scanned for annotated Java Methods associated with this instance.
+     * @return the <code>Set</code> of commandIdentifiers to be scanned for annotated Java Methods
+     * associated with this Configuration.
      */
     public Set<CommandIdentifier> getScanCommandIdentifiers() {
         return commandIdentifiers;
     }
 
     /**
-     * @return the <code>Set</code> of classes to be excluded from being scanned for annotated Java Methods associated with this instance.
+     * @return the <code>Set</code> of classes that are to be excluded from being scanned for annotated
+     * Java Methods associated with this Configuration.
      */
     public Set<Class<?>> getExcludeClasses() {
         return excludeClasses;
     }
 
     /**
-     * @return whether the <code>CLI</code> should not build its built-in Help Command.
+     * Returns whether the <code>CLI</code> should build its default help Command.
+     * @return <code>true</code> if the CLI should build its default help Command,
+     * otherwise <code>false</code>.
      */
     public boolean isMapHelpCommand() {
         return mapHelpCommand;

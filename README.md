@@ -1,6 +1,7 @@
 # j-cli
 
-java-library
+Annotation based library which allows for the creation 
+of a shell around an arbitrary java application.
 
 ## Table of Contents
 

@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 import com.github.wnebyte.jarguments.adapter.TypeAdapter;
 
 /**
- * Annotate the Parameters of your {@link Command} annotated Java Methods with this annotation to explicitly set their
+ * Annotate the Parameters of your {@link Command} annotated Java Methods with this annotation to set their
  * name, description, defaultValue and more.<br>
  * Here are some examples of usage:<br><br>
  * <pre>
@@ -21,7 +21,7 @@ import com.github.wnebyte.jarguments.adapter.TypeAdapter;
  * </pre>
  * <p>Here the name of this optional argument is set to [ "bar" ].
  * <br>
- * The description field is omitted, and its defaultValue is set to "hello".
+ * The description field is omitted, and the defaultValue is set to "hello".
  *
  * <br>
  * </p>
@@ -35,8 +35,8 @@ import com.github.wnebyte.jarguments.adapter.TypeAdapter;
  *     // code
  * }
  * </pre>
- * <p>Here the name of this required argument is set to [ "bar", "foo" ], and
- * the description field is omitted.
+ * <p>Here the name of this required argument is set to [ "bar", "foo" ]. The description field is omitted.
+ * The value is constrained to the set {"hello", "there"}.
  * </p>
  * <br>
  * <pre>
@@ -61,7 +61,6 @@ import com.github.wnebyte.jarguments.adapter.TypeAdapter;
  * </p>
  * @see Command
  * @see Controller
- * @see Group
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.PARAMETER})

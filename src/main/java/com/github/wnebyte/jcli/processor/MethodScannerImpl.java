@@ -82,7 +82,6 @@ public class MethodScannerImpl implements MethodScanner {
                 .filter(method -> method.isAnnotationPresent(annotation)).collect(Collectors.toSet());
     }
 
-
     /*
     ###########################
     #         METHODS         #
