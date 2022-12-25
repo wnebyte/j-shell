@@ -1,7 +1,9 @@
 # j-cli
 
-Annotation based library which allows for the creation 
-of a shell around an arbitrary java application.
+Annotation based framework that can be used to quickly set up a 
+Command-Line-Interface.
+
+<strong>README is out of date</strong>
 
 ## Table of Contents
 
